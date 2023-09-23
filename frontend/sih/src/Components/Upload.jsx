@@ -11,25 +11,25 @@ export default function VideoUpload() {
 
   const handleUpload = async () => {
     if (!selectedFile) return;
-  
+
     console.log('Selected file:', selectedFile); // Log the selected file
-  
+
     const formData = new FormData();
     formData.append('video', selectedFile);
-  
+
     try {
       const response = await axios.post('http://localhost:3001/api/upload-video', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-  
+
       console.log('Upload success:', response.data);
     } catch (error) {
       console.error('Upload error:', error);
     }
   };
-  
+
 
   return (
     <div>
