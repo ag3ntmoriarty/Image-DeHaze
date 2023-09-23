@@ -1,30 +1,46 @@
-import React, { useRef, useEffect , useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 export default function LiveVideoFeed() {
-  const[camOn,setCamon]=useState(false);
-
-
+  const [camOn, setCamOn] = useState(false);
   const videoRef = useRef(null);
+  const mediaStreamRef = useRef(null);
 
   useEffect(() => {
-    navigator.mediaDevices
-      .getUserMedia({ video: true })
-      .then((stream) => {
-        videoRef.current.srcObject = stream;
-      })
-      .catch((error) => {
-        console.error('Error accessing camera:', error);
-      });
-  },[]);
+    if (camOn) {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+          // Check if the video element exists before setting srcObject
+          if (videoRef.current) {
+            videoRef.current.srcObject = stream;
+          }
+          mediaStreamRef.current = stream; // Save the media stream reference
+        })
+        .catch((error) => {
+          console.error('Error accessing camera:', error);
+        });
+    } else {
+      // If camera is turned off, stop the stream (if it exists)
+      const stream = mediaStreamRef.current;
+      if (stream) {
+        stream.getTracks().forEach((track) => {
+          track.stop();
+        });
+        // Check if the video element exists before setting srcObject to null
+        if (videoRef.current) {
+          videoRef.current.srcObject = null;
+        }
+        mediaStreamRef.current = null;
+      }
+    }
+  }, [camOn]);
 
   return (
     <div>
-        <button onClick={()=>{
-            setCamon(!camOn);
-        }}>Do you wish to turn your camera on?</button>
-        {setCamon && <video ref={videoRef} autoPlay></video>}
+      <button onClick={() => setCamOn(!camOn)}>
+        {camOn ? 'Turn Camera Off' : 'Turn Camera On'}
+      </button>
+      <video ref={videoRef} autoPlay></video>
     </div>
   );
 }
-
-
