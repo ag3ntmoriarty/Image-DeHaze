@@ -6,6 +6,7 @@ const { exec } = require('child_process');
 const app = express();
 const port = 3001;
 
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'local_videos/'); // Specify the destination folder
@@ -20,6 +21,7 @@ const upload = multer({ storage });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/results', express.static(path.join(__dirname, 'results')));
 
 app.post('/api/upload-video', upload.single('video'), (req, res) => {
   try {
