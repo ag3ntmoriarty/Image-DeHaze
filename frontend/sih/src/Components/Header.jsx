@@ -31,9 +31,11 @@ export default function Content({ setSelectedOption }) {
   const handleSwitchChange = (event) => {
     const option = event.target.name; // Get the name attribute from the FormControlLabel
     setSelectedOption(option);
+    setVidLiv(!vidliv);
   };
 
-  // const[show,setShow]=useState[false];
+  const[vidliv,setVidLiv]=useState(false);
+
 
   return (
     <div id="contain">
@@ -53,11 +55,11 @@ export default function Content({ setSelectedOption }) {
 
         <div className="content-item">
           <div className='left'>
-            <p>Video Upload</p>
+            <p>Video Upload</p> 
           </div>
           <div className='right'>
             <FormControlLabel
-              control={<Switch defaultChecked={false} name="live" onChange={handleSwitchChange} />}
+              control={<Switch defaultChecked={vidliv} name={vidliv ? "video" : "live"} onChange={handleSwitchChange} />}
               label="Live Feed"
             />
           </div>
