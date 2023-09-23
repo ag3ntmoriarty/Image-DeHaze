@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Content from "../Components/Header";
 import Video from "./video";
-import LiveVideoFeed from "../Components/live";
+import LiveVideoFeed from "../Components/Live";
 import VideoUpload from "../Components/Upload";
 import VideoUploader from "../Components/VideoUploader";
 export default function Home() {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 export default function VideoUpload() {
+  
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -32,9 +33,20 @@ export default function VideoUpload() {
 
 
   return (
-    <div>
-      <input type="file" accept=".mp4" onChange={handleFileChange} />
-      <button type="button" onClick={handleUpload}>Upload Video</button>
-    </div>
-  );
+    <>
+      <div>
+        <input type="file" accept=".mp4" onChange={handleFileChange} />
+        <button type="button" onClick={handleUpload}>Upload Video</button>
+      </div>
+
+      {/* Displaying the file */}
+      {selectedFile && (
+        <div>
+            <video controls width="500" height="auto">
+                <source src={URL.createObjectURL(selectedFile)} type = "video/mp4" />
+            </video>
+        </div>
+      )}
+    </>
+  )
 }
