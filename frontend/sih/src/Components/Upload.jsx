@@ -60,10 +60,12 @@ export default function VideoUpload() {
         )}
       </div> */}
       <div className='upload-container'>
-        <div className='upload-icon' onClick={handleUploadIconClick}>
-          <MdCloudUpload size={48} />
-          <p>Select File</p>
-        </div>
+        {!selectedFile ? (
+          <div className='upload-icon' onClick={handleUploadIconClick}>
+            <MdCloudUpload size={48} />
+            <p>Select File</p>
+          </div>
+        ) : null}
         <input
           type="file"
           accept=".mp4"

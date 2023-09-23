@@ -38,15 +38,15 @@ export default function LiveVideoFeed() {
 
   return (
     <div className="video-container">
-      {/* <button onClick={() => setCamOn(!camOn)}>
-        {camOn ? 'Turn Camera Off' : 'Turn Camera On'}
-      </button>
-      <video ref={videoRef} autoPlay></video> */}
-      <video ref={videoRef} autoPlay></video>
-      {camOn && (<button onClick={() => setCamOn(false)}>
-        Turn Camera Off
-      </button>
-      )}
+      <div className='liv'>
+        <video ref={videoRef} autoPlay></video>
+      </div>
+      <div>
+        {camOn && (<button onClick={() => setCamOn(false)}> 
+          Turn Camera Off
+        </button>
+        )}
+      </div>
     </div>
   );
 }
