@@ -1,14 +1,15 @@
 import React from 'react';
-import VideoUpload from './Upload';
-import LiveFeed from './Live';
+// import VideoUpload from './Upload';
+// import LiveFeed from './Live';
+import "./Header.css";
 
 export default function Header() {
   return (
-    <div>
-      <h1>PixelEncoders SIH 2023</h1>
+    <div id="header">
+      <h2>PixelEncoders SIH 2023</h2>
       <p>Team #5: </p>
-      <p><strong>Problem Statement:</strong> Design and development of AI-ML based intelligent de-smoking/hazing <br />
-      algorithm for reproducing the real time video of the area under fire specifically for indoor fire hazards to <br />
+      <p><strong>Problem Statement:</strong> Design and development of AI-ML based intelligent de-smoking/hazing
+      algorithm for reproducing the real time video of the area under fire specifically for indoor fire hazards to
       aid the rescue operation</p>
 
 

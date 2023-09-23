@@ -8,7 +8,7 @@ export default function Home() {
   const [selectedOption, setSelectedOption] = useState(null);
 
   return (
-    <div>
+    <div id="container">
       <Header />
       <Content setSelectedOption={setSelectedOption}/>
       {selectedOption === 'live' && <LiveVideoFeed />}

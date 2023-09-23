@@ -1,0 +1,20 @@
+#header{
+    background: var(--secondary-bg);
+    margin: clamp(50px, 10vh, 200px) 0;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.5em;
+    align-self: flex-start;
+    max-width: 800px;
+}
+
+#header h2{
+    background: linear-gradient(-45deg, var(--custom-four));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rotate-bg 1s infinite;
+}
+
+#header p{
+    margin-bottom: 0;
+}

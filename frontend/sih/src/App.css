@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+html{
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0px;
+  padding: 0px;
+}
+*{
+  font-family: 'Chakra Petch', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --primary-bg: #101418;
+  --secondary-bg: rgb(20, 26, 31);
+  --gradient-bg: linear-gradient(to top right, rgb(20, 26, 31), rgb(0, 2, 17));
+  --custom-four: #a494e7, #b152dd,  #02b2f1, #10ddad;
+}
+/* mandatory */
+
+/* scroll-bar starts here */
+body::-webkit-scrollbar{
+  width: 0.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar-track{
+  background: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body::-webkit-scrollbar-thumb{
+  background: white;
+  border-radius: 0.25rem;
+}
+/* scroll-bar ends here */
+
+body{
+  /* min-height: 100vh;
+  min-width: 100vw; */
+  background-color: var(--primary-bg);
+}
+
+/* actual CSS */
+h2{
+  margin: 0;
+}
+
+#container{
+  width: 80vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
