@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import "./Live.css";
+import "./Header.css";
 
 export default function LiveVideoFeed() {
   const [camOn, setCamOn] = useState(true);
@@ -37,7 +37,7 @@ export default function LiveVideoFeed() {
   }, [camOn]);
 
   return (
-    <div id="video-container">
+    <div className="video-container">
       {/* <button onClick={() => setCamOn(!camOn)}>
         {camOn ? 'Turn Camera Off' : 'Turn Camera On'}
       </button>
