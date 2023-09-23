@@ -1,16 +1,43 @@
 const express = require('express');
-const port = 3000;
-
-const bodyParser = require('body-parser');
 const multer = require('multer');
-const upload = multer();
+const path = require('path');
 
 const app = express();
+const port = 3001;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'local_videos/'); // Specify the destination folder
+  },
+  filename: (req, file, cb) => {
+    const fileName = `${Date.now()}-${file.originalname}`;
+    cb(null, fileName); // Save the file with a unique name
+  },
+});
 
-app.post('/upload', upload.single('file'), (req, res) => {
-    res.json({ file: req.file });
+const upload = multer({ storage });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.post('/api/upload-video', upload.single('video'), (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: 'No file uploaded' });
     }
-);
+
+    // Handle the uploaded file here (e.g., validation, renaming, saving to a database)
+
+    res.json({
+      message: 'File uploaded successfully',
+      filePath: req.file.path,
+    });
+  } catch (error) {
+    console.error('Upload error:', error);
+    res.status(500).json({ error: 'An error occurred during file upload' });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
