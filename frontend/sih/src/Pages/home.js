@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import Content from "../Components/Content";
 import Video from "./video";
 import LiveVideoFeed from "../Components/Live";
+import VideoUpload from "../Components/Upload";
 export default function Home() {
 
   const [selectedOption, setSelectedOption] = useState(null);
@@ -12,7 +13,7 @@ export default function Home() {
       <Header />
       <Content setSelectedOption={setSelectedOption}/>
       {selectedOption === 'live' && <LiveVideoFeed />}
-      {selectedOption === 'video' && <Video />}
+      {selectedOption === 'video' && <VideoUpload />}
 
     </div>
   );
