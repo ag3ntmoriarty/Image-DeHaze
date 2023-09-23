@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import Header from "../Components/Header";
-import Content from "../Components/Content";
+import Content from "../Components/Header";
 import Video from "./video";
-import LiveVideoFeed from "../Components/Live";
+import LiveVideoFeed from "../Components/live";
 import VideoUpload from "../Components/Upload";
+import VideoUploader from "../Components/VideoUploader";
 export default function Home() {
 
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState('video');
 
   return (
     <div id="container">
-      <Header />
       <Content setSelectedOption={setSelectedOption}/>
       {selectedOption === 'live' && <LiveVideoFeed />}
       {selectedOption === 'video' && <VideoUpload />}
-
     </div>
   );
 }

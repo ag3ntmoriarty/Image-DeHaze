@@ -1,12 +1,21 @@
+#contain{
+    padding: 20px;
+    margin: clamp(50px, 10vh, 200px) 0;
+}
+
+
+
 #header{
     background: var(--secondary-bg);
-    margin: clamp(50px, 10vh, 200px) 0;
-    padding: 40px;
+    width: 50%;
+    float: left;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 0.5em;
     align-self: flex-start;
-    max-width: 800px;
+    margin-right: 30px;
 }
+
 
 #header h2{
     background: linear-gradient(-45deg, var(--custom-four));
@@ -18,3 +27,33 @@
 #header p{
     margin-bottom: 0;
 }
+
+#options{
+    width: 30%;
+    float: right;
+    padding:10px;
+    margin-left: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.5em;
+    align-self: flex-start;
+    margin-top: 45px;
+}
+
+.content-item {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 2px; 
+}
+  
+.left {
+    flex: 1; 
+     
+}
+.left p{
+    margin: 0;
+}
+  
+.right {
+    flex: 1; 
+}
+  

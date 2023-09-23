@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import "./Live.css";
 
 export default function LiveVideoFeed() {
-  const [camOn, setCamOn] = useState(false);
+  const [camOn, setCamOn] = useState(true);
   const videoRef = useRef(null);
   const mediaStreamRef = useRef(null);
 
@@ -38,10 +38,15 @@ export default function LiveVideoFeed() {
 
   return (
     <div id="video-container">
-      <button onClick={() => setCamOn(!camOn)}>
+      {/* <button onClick={() => setCamOn(!camOn)}>
         {camOn ? 'Turn Camera Off' : 'Turn Camera On'}
       </button>
+      <video ref={videoRef} autoPlay></video> */}
       <video ref={videoRef} autoPlay></video>
+      {camOn && (<button onClick={() => setCamOn(false)}>
+        Turn Camera Off
+      </button>
+      )}
     </div>
   );
 }
