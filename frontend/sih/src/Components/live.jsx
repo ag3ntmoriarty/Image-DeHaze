@@ -45,5 +45,3 @@ export default function LiveVideoFeed() {
     </div>
   );
 }
-
-// Path: frontend/sih/src/Components/live.jsx
