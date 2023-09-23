@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 export default function VideoUpload() {
-  
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -26,11 +25,17 @@ export default function VideoUpload() {
       });
 
       console.log('Upload success:', response.data);
+
+      // Adding Video Processing here
+      const processResponse = await axios.post('http://localhost:3001/api/process-video', {
+      // Include any additional data you want to send to the server for processing
+      });
+
+      console.log('Video processing initiated:', processResponse.data);
     } catch (error) {
       console.error('Upload error:', error);
     }
   };
-
 
   return (
     <>
@@ -42,11 +47,11 @@ export default function VideoUpload() {
       {/* Displaying the file */}
       {selectedFile && (
         <div>
-            <video controls width="500" height="auto">
-                <source src={URL.createObjectURL(selectedFile)} type = "video/mp4" />
-            </video>
+          <video controls width="500" height="auto">
+            <source src={URL.createObjectURL(selectedFile)} type="video/mp4" />
+          </video>
         </div>
       )}
     </>
-  )
+  );
 }

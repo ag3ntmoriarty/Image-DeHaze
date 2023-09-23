@@ -1,52 +1,17 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
+const { exec } = require('child_process');
 
 const app = express();
 const port = 3001;
-const { exec } = require('child_process');
-const util = require('util');
-const fs = require('fs');
-
-// Promisify the exec function for async/await usage
-const execAsync = util.promisify(exec);
-
-app.get('/run-python', async (req, res) => {
-    try {
-        // Python script to run
-        const pythonScript = './test.py';
-
-        // Execute the Python script asynchronously
-        const { stdout, stderr } = await execAsync(`python ${pythonScript}`);
-
-        // Process the Python script's output
-        console.log(stdout);
-        console.error(stderr);
-
-        // Read and send the contents of the generated text file
-        const filePath = 'myfile.txt'; // Replace with the actual path to your text file
-        const fileContents = await readFileAsync(filePath, 'utf-8');
-
-        res.json({
-            message: 'Python script executed successfully',
-            fileContents: fileContents,
-        });
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ error: 'An error occurred during script execution' });
-    }
-});
-
-// Promisify the readFile function for async/await usage
-const readFileAsync = util.promisify(fs.readFile);
-
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'local_videos/'); // Specify the destination folder
   },
   filename: (req, file, cb) => {
-    const fileName = `${Date.now()}-${file.originalname}`;
+    const fileName = `test.mp4`;
     cb(null, fileName); // Save the file with a unique name
   },
 });
@@ -62,10 +27,30 @@ app.post('/api/upload-video', upload.single('video'), (req, res) => {
       return res.status(400).json({ error: 'No file uploaded' });
     }
 
-    // Handle the uploaded file here (e.g., validation, renaming, saving to a database)
-    res.json({
-      message: 'File uploaded successfully',
-      filePath: req.file.path,
+    // Get the input video file path
+    const inputVideoPath = path.join(__dirname, 'local_videos', `test.mp4`);
+
+    // Define the output video file path
+    const outputVideoPath = path.join(__dirname, 'results', `result.mp4`);
+
+    console.log('Input video path:', inputVideoPath);
+    console.log('Output video path:', outputVideoPath);
+
+    // Execute the Python script with the input and output paths
+    exec(`python process_video.py ${inputVideoPath} ${outputVideoPath}`, (error, stdout, stderr) => {
+      console.log('Python script output:', stdout);
+      console.error('Python script error:', stderr);
+      if (error) {
+        console.error('Error processing video:', error);
+        res.status(500).json({ error: 'An error occurred during video processing' });
+      } else {
+        // Handle successful video processing
+        console.log('Video processed successfully');
+        res.json({
+          message: 'Video processed successfully',
+          outputFilePath: outputVideoPath,
+        });
+      }
     });
   } catch (error) {
     console.error('Upload error:', error);
