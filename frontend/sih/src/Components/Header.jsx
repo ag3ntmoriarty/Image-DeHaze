@@ -33,7 +33,6 @@ export default function Content({ setSelectedOption }) {
     setSelectedOption(option);
   };
 
-  // const[show,setShow]=useState[false];
 
   return (
     <div id="contain">
