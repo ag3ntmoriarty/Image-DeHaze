@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001'; // Replace with your actual backend URL
+const API_URL = 'http://localhost:3000'; 
 
 export default function VideoUpload() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -41,9 +41,13 @@ export default function VideoUpload() {
 
   return (
     <div>
-      <input type="file" accept=".mp4" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload Video</button>
-      <video ref={videoRef} controls autoPlay></video>
+      <form action={`${API_URL}/upload`} method="post" encType="multipart/form-data">
+        <input type="file" accept=".mp4" onChange={handleFileChange} />
+        <button type="button" onClick={handleUpload}>
+          Upload Video
+        </button>
+        <video ref={videoRef} controls autoPlay></video>
+      </form>
     </div>
   );
 }
