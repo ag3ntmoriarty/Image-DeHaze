@@ -1,0 +1,33 @@
+/* Upload.css */
+
+.upload-container {
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 20px;
+    max-width: 500px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 5px;
+    background: var(--secondary-bg);
+}
+  
+.upload-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    color: #007bff;
+}
+  
+.upload-icon p {
+    margin-top: 8px;
+}
+  
+button {
+    margin-top: 10px;
+}
+  
+.selected-file {
+    margin-top: 20px;
+}
+  
