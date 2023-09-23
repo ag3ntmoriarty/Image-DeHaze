@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import VideoUpload from './Upload';
+import LiveFeed from './Live';
 
 export default function Header() {
   return (
@@ -8,6 +10,9 @@ export default function Header() {
       <p><strong>Problem Statement:</strong> Design and development of AI-ML based intelligent de-smoking/hazing <br />
       algorithm for reproducing the real time video of the area under fire specifically for indoor fire hazards to <br />
       aid the rescue operation</p>
+
+
+
     </div>
   )
 }
