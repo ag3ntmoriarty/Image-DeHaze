@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Header from "../Components/Header";
 import Content from "../Components/Content";
-import Live from "./live";
 import Video from "./video";
+import LiveVideoFeed from "../Components/Live";
 export default function Home() {
 
   const [selectedOption, setSelectedOption] = useState(null);
@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Header />
       <Content setSelectedOption={setSelectedOption}/>
-      {selectedOption === 'live' && <Live />}
+      {selectedOption === 'live' && <LiveVideoFeed />}
       {selectedOption === 'video' && <Video />}
 
     </div>
