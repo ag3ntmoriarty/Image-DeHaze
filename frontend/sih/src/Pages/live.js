@@ -1,5 +1,5 @@
 import React from 'react'
-import LiveFeed from '../Components/Live'
+import LiveFeed from '../Components/live'
 
 export default function Live() {
   return (
