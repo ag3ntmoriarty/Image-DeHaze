@@ -7,6 +7,8 @@ import { useState } from 'react';
 function App() {
   const [videoSrc, setVideoSrc] = useState('');
 
+ 
+
   // Fetch the URL of the processed video from your Express.js backend
   // and set it as the 'videoSrc' state variable
   const getVideoSrc = async () => {
@@ -15,18 +17,18 @@ function App() {
       const data = await response.json();
       console.log('Video src:', data.outputFilePath);
       setVideoSrc(data.outputFilePath);
+      window.location.reload();
     } catch (error) {
       console.error('Error fetching video source:', error);
     }
   };
 
+
+
   return (
     <div>
       <Home />
       {/* <VideoUpload getVideoSrc={getVideoSrc} /> Pass the 'getVideoSrc' function to the VideoUpload component */}
-      <Display 
-      videoSrc="http://localhost:3001/results/result.mp4"
-      />
     </div>
   );
 }

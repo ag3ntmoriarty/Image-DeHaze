@@ -3,6 +3,7 @@ import axios from 'axios';
 import {MdCloudUpload, MdDelete} from 'react-icons/md';
 import {AiFillFileImage} from 'react-icons/ai';
 import "./Upload.css";
+import Display from './Display';
 
 export default function VideoUpload() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -14,6 +15,7 @@ export default function VideoUpload() {
   
   const handleUpload = async () => {
     if (!selectedFile) return;
+
 
     console.log('Selected file:', selectedFile); // Log the selected file
 
@@ -27,7 +29,7 @@ export default function VideoUpload() {
         },
       });
 
-      console.log('Upload success:', response.data);
+      alert('Upload success');
 
       // Adding Video Processing here
       const processResponse = await axios.post('http://localhost:3001/api/process-video', {
@@ -39,6 +41,7 @@ export default function VideoUpload() {
       console.error('Upload error:', error);
     }
   };
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setSelectedFile(file);
@@ -59,31 +62,39 @@ export default function VideoUpload() {
           </div>
         )}
       </div> */}
-      <div className='upload-container'>
-        {!selectedFile ? (
-          <div className='upload-icon' onClick={handleUploadIconClick}>
-            <MdCloudUpload size={48} />
-            <p>Select File</p>
-          </div>
-        ) : null}
-        <input
-          type="file"
-          accept=".mp4"
-          onChange={handleFileChange}
-          ref={fileInputRef}
-          style={{ display: 'none' }}
-        />
-        <button type="button" onClick={handleUpload}>
-          Upload Video
-        </button>
+      <div className='ml'>
+        <div className='upload-container'>
+          {!selectedFile ? (
+            <div className='upload-icon' onClick={handleUploadIconClick}>
+              <MdCloudUpload size={48} />
+              <p>Select File</p>
+            </div>
+          ) : null}
+          <input
+            type="file"
+            accept=".mp4"
+            onChange={handleFileChange}
+            ref={fileInputRef}
+            style={{ display: 'none' }}
+          />
+          <button type="button" onClick={handleUpload} >
+            Upload Video
+          </button>
 
-        {selectedFile && (
-          <div>
-            <video controls width="500" height="auto">
-              <source src={URL.createObjectURL(selectedFile)} type="video/mp4" />
-            </video>
-          </div>
-        )}
+          {selectedFile && (
+            <div>
+              <video controls width="500" height="auto">
+                <source src={URL.createObjectURL(selectedFile)} type="video/mp4" />
+              </video>
+            </div>
+          )}
+          
+        </div>
+        <div className='web'>
+          <Display 
+            videoSrc="http://localhost:3001/results/result.mp4"
+          />
+        </div>
       </div>
     </>
   );
