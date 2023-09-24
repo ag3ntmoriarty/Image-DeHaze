@@ -12,7 +12,7 @@ DRSFormer
 Non Linear Functions Tested:\
 Wiener Filter
 
-<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/MixedDehazeNet/results/Screenshot%20from%202023-09-24%2009-27-27.png?raw=true">
+<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/MixedDehazeNet/results/Screenshot%20from%202023-09-24%2009-27-27.png">
 
 Future Scope of Model:
 
@@ -21,4 +21,4 @@ To use:\
 Sparse Attention\
 Window Attention (from DehazeFromer)\
 Proposed model for future testing: 
-<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/MixedDehazeNet/results/IMG_20230924_095858.png?raw=true">
+<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/MixedDehazeNet/results/IMG_20230924_095858.png">
