@@ -12,7 +12,9 @@ DRSFormer
 Non Linear Functions Tested:\
 Wiener Filter
 
-<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/MixedDehazeNet/results/Screenshot%20from%202023-09-24%2009-27-27.png">
+
+Proposed Solution 1
+<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/GridDehazeNet/indoor_results/Screenshot%20from%202023-09-24%2012-51-17.png">
 
 Future Scope of Model:
 
@@ -22,6 +24,8 @@ Sparse Attention\
 Window Attention (from DehazeFromer)
 
 
-Proposed model for future testing: \
+Proposed Solution 2: \
 YOLO V5 model added at the end to perform human detection to aid in search operations\
-<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/MixedDehazeNet/results/IMG_20230924_095858.png">
+Addition of Sparse Attention in MixDeHazeNet architecture in to reduce latency (training still in progress)\
+Addition of wiener filter and Dark Channel Prior for reducing latency
+<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/MixedDehazeNet/results/Screenshot%20from%202023-09-24%2012-53-33.png">
