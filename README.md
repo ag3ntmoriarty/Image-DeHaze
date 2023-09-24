@@ -19,6 +19,9 @@ Future Scope of Model:
 To test out chnages in the attention mechanism used in the above model to improve performance\
 To use:\
 Sparse Attention\
-Window Attention (from DehazeFromer)\
-Proposed model for future testing: 
+Window Attention (from DehazeFromer)
+
+
+Proposed model for future testing: \
+YOLO V5 model added at the end to perform human detection to aid in search operations\
 <img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/MixedDehazeNet/results/IMG_20230924_095858.png">
