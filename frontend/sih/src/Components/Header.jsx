@@ -47,11 +47,11 @@ export default function Content({ setSelectedOption }) {
         aid the rescue operation</p>
       </div>
       <div id="options">
-        <strong>
+        {/* <strong>
           <h2>
             <i>Options Offered:</i>
           </h2>
-        </strong>
+        </strong> */}
 
         <div className="content-item">
           <div className='left'>
@@ -59,7 +59,7 @@ export default function Content({ setSelectedOption }) {
           </div>
           <div className='right'>
             <FormControlLabel
-              control={<Switch defaultChecked={vidliv} name={vidliv ? "video" : "live"} onChange={handleSwitchChange} />}
+              control={<Switch defaultChecked={vidliv}  name={vidliv ? "video" : "live"} onChange={handleSwitchChange} />}
               label="Live Feed"
             />
           </div>

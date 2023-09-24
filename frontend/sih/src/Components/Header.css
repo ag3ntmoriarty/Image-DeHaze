@@ -1,19 +1,23 @@
 #contain{
-    padding: 20px;
-    margin: clamp(50px, 10vh, 200px) 0;
+    margin:30px 0;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 
 
 #header{
     background: var(--secondary-bg);
-    width: 50%;
+    backdrop-filter:var(--filter-bg);
+    width: 100%;
     float: left;
     padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 0.5em;
     align-self: flex-start;
-    margin-right: 30px;
+    box-sizing: border-box;
 }
 
 
@@ -29,14 +33,17 @@
 }
 
 #options{
+    background: var(--secondary-bg);
+    backdrop-filter: var(--filter-bg);
     width: 30%;
     float: right;
     padding:10px;
-    margin-left: 30px;
+    margin-top: 30px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 0.5em;
     align-self: flex-start;
-    margin-top: 45px;
+    position: relative;
+    bottom: 0;
 }
 
 .content-item {
@@ -60,12 +67,12 @@
 
 .video-container {
     text-align: center;
-    margin-left: 60px;
     margin-top: 20px;
     max-width: 500px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     background: var(--secondary-bg);
+    backdrop-filter:var(--filter-bg);
 }
   
 .liv {

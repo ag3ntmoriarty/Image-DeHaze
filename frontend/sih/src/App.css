@@ -16,9 +16,10 @@ body{
 
 :root{
   --primary-bg: #101418;
-  --secondary-bg: rgb(20, 26, 31);
+  --secondary-bg: rgba(40, 52, 62,0.2);
   --gradient-bg: linear-gradient(to top right, rgb(20, 26, 31), rgb(0, 2, 17));
   --custom-four: #a494e7, #b152dd,  #02b2f1, #10ddad;
+  --filter-bg:  blur(5px) brightness(1.2);
 }
 /* mandatory */
 
@@ -41,6 +42,8 @@ body{
   /* min-height: 100vh;
   min-width: 100vw; */
   background-color: var(--primary-bg);
+  background-image: url('background.jpg');
+  background-size: cover;
 }
 
 /* actual CSS */

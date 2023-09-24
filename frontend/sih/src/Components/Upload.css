@@ -4,24 +4,25 @@
     align-items: center;
     justify-content: center;
     gap:30px;
-    border: 1px solid rgba(255,255,255,0.5);
-    padding:20px;
     height: 500px;
     width: 100%;
-    border-radius: 5px;
 }
 
 
 .upload-container {
+    background: var(--secondary-bg);
+    backdrop-filter: var(--filter-bg);
     display: flex;
     flex-direction: column;
+    flex:1;
     align-items: center;
     justify-content: center;
-    height:350px;
-    width: 500px;
+    /* height:350px;
+    width: 500px; */
+    height:100%;
     border: 1px solid rgba(255,255,255,0.5);
     border-radius: 5px;
-    background: var(--secondary-bg);
+    
     float:left;
 }
   
@@ -49,13 +50,16 @@ button {
 
 .web{
     background: var(--secondary-bg);
+    backdrop-filter: var(--filter-bg);
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid rgba(255,255,255,0.5);
-    padding:20px;
-    height: 310px;
-    width: 500px;
+   
+    /* height: 310px;
+    width: 500px; */
+    height:100%;
+    flex:1;
     border-radius: 5px;
 }
 

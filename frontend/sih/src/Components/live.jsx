@@ -41,12 +41,12 @@ export default function LiveVideoFeed() {
       <div className='liv'>
         <video ref={videoRef} autoPlay></video>
       </div>
-      <div>
+      {/* <div>
         {camOn && (<button onClick={() => setCamOn(false)}> 
           Turn Camera Off
         </button>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
