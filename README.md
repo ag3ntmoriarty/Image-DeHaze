@@ -1,4 +1,4 @@
-# SIH2023-PixelEncoders
+# Image-DeHaze (SIH2023-PixelEncoders)
 We have conducted extensive testing on the following models with various non linear filters to imporove the performance and results of dehazing:\
 Models tested:\
 MixDehazeNet\
