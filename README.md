@@ -1,31 +1,75 @@
-# Image-DeHaze (SIH2023-PixelEncoders)
-We have conducted extensive testing on the following models with various non linear filters to imporove the performance and results of dehazing:\
-Models tested:\
-MixDehazeNet\
-GrdiDehazeNet\
-SFNet\
-DehazeFormer\
-RIDCP_Dehazing\
-DRSFormer
+# AI-ML Based Intelligent De-Smoking/De-Hazing Algorithm
 
+[![Showcasing the hazy view and dehazed view](https://img.youtube.com/vi/ftlFrpD1ex8/0.jpg)](https://www.youtube.com/watch?v=ftlFrpD1ex8)
+*Showcasing the hazy view (left) and the dehazed view (right)*
 
-Non Linear Functions Tested:\
-Wiener Filter
+[![Video explaining the changes and results](https://img.youtube.com/vi/CqyUP8Gyb9Y/0.jpg)](https://www.youtube.com/watch?v=CqyUP8Gyb9Y)
+*Video explaining the changes and results*
 
+## 📖 Project Overview
+The AI-ML Based Intelligent De-Smoking/De-Hazing Algorithm is an advanced real-time image and video processing solution designed to enhance visibility in fire-prone environments. Developed as part of Smart India Hackathon (SIH) 2023, this project focuses on improving rescue operations by providing clear visuals of areas affected by smoke and haze, particularly in indoor fire hazards.
 
-Proposed Solution 1
-<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/GridDehazeNet/indoor_results/Screenshot%20from%202023-09-24%2012-51-17.png">
+## ⚠️ Problem Statement (SIH1417)
+Fire hazards create dense smoke that significantly reduces visibility, making rescue operations more difficult. Existing dehazing algorithms suffer from high latency and may not perform well in real-time conditions. Our project aims to develop an AI-powered low-latency, high-performance dehazing algorithm to address this challenge effectively.
 
-Future Scope of Model:
+## 🎯 Key Objectives
+- Real-time dehazing for images and videos
+- Enhancing existing state-of-the-art models
+- Reducing model latency while maintaining accuracy
+- Proposing novel model architectures
 
-To test out chnages in the attention mechanism used in the above model to improve performance\
-To use:\
-Sparse Attention\
-Window Attention (from DehazeFromer)
+## 💡 Our Solution
+We implemented two major improvements over existing dehazing models:
 
+### 1. GridDehazeNet Enhancement
+- Integrated Pixel Attention Mechanism to improve dehazing quality
+- Improved SSIM score to 0.9841 (original: 0.9836)
+- Reduced latency to 9.91 ms (original: 9.905 ms)
 
-Proposed Solution 2: \
-YOLO V5 model added at the end to perform human detection to aid in search operations\
-Addition of Sparse Attention in MixDeHazeNet architecture in to reduce latency (training still in progress)\
-Addition of wiener filter and Dark Channel Prior for reducing latency
-<img width="100%" src="https://github.com/agntgalahad/SIH2023-PixelEncoders/blob/main/MixedDehazeNet/results/Screenshot%20from%202023-09-24%2012-53-33.png">
+<details>
+<summary>View GridDehazeNet Results</summary>
+<img width="100%" src="solution_1_griddehazenet.png">
+</details>
+
+### 2. MixDehazeNet Optimization
+- Introduced Mix Structure Block
+- Incorporated Dark Channel Prior, Wiener Filter, and Sparse Attention
+- Combined with Object Detection for better scene understanding
+
+<details>
+<summary>View MixDehazeNet Results</summary>
+<img width="100%" src="solution_2_mixdehazenet.png">
+</details>
+
+## 🛠️ Technical Approach
+- **Datasets Used:** 
+  - Training: RESIDE, HAZE 4K
+  - Testing: SOTS (500 indoor images)
+- **Tech Stack:** 
+  - Backend: Python, Node.js, Express
+  - Frontend: React.js
+
+## 🌍 Real-World Applications
+- Enhancing visibility in fire rescue operations
+- Real-time dehazing in vehicles and aircraft
+- Search and rescue missions in low-visibility conditions
+
+## 🚀 Future Enhancements
+- 🔹 Integration of Image Segmentation
+- 🔹 Further latency reduction for real-time applications
+- 🔹 Deployment as a scalable cloud-based API
+- 🔹 Combining MixDehazeNet with YOLOv5 for enhanced object detection in hazy conditions
+
+---
+
+*This project represents a step forward in AI-powered real-time image enhancement, with direct applications in safety, transportation, and disaster management.*
+
+📂 **GitHub Repository:** [SIH2023-PixelEncoders](https://github.com/agntgalahad/SIH2023-PixelEncoders)
+
+## 👥 Contributors
+- Himanshu Patil
+- Kedar Kulkarni
+- Alekya Arra
+- Zaidali Merchant
+- Atharva Kulkarni
+- Rylan Lewis
